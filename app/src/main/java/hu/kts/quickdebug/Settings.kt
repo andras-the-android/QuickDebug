@@ -12,4 +12,6 @@ class Settings(private val contentResolver: ContentResolver){
     fun setScreenTimeout(millis: Long) = Settings.System.putLong(contentResolver, Settings.System.SCREEN_OFF_TIMEOUT,  millis)
 
     fun getScreenTimeout() = Settings.System.getLong(contentResolver, Settings.System.SCREEN_OFF_TIMEOUT)
+
+    fun disableDontKeepActivities() = Settings.Global.putInt(contentResolver, Settings.Global.ALWAYS_FINISH_ACTIVITIES, 0)
 }

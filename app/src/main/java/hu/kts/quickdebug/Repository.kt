@@ -11,6 +11,7 @@ class Repository(private val settings: Settings, private val sharedPreferences: 
             if (settings.getScreenTimeout() == LONG_SCREEN_TIMEOUT) {
                 settings.setScreenTimeout(sharedPreferences.getLong(KEY_ORIGINAL_SCREEN_TIMEOUT, DEFAULT_TIMEOUT))
             }
+            settings.disableDontKeepActivities()
         } else {
             sharedPreferences.edit().putLong(KEY_ORIGINAL_SCREEN_TIMEOUT, settings.getScreenTimeout()).apply()
             settings.setScreenTimeout(LONG_SCREEN_TIMEOUT)
@@ -22,7 +23,4 @@ class Repository(private val settings: Settings, private val sharedPreferences: 
         const val KEY_ORIGINAL_SCREEN_TIMEOUT = "originalScreenTimeout"
         val DEFAULT_TIMEOUT = TimeUnit.MINUTES.toMillis(2)
     }
-
-
-
 }
