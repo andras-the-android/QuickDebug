@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Quick Debug</string>
-    <string name="message">Nothing to see here...</string>
+    <string name="message">Nothing to see here&#8230;</string>
+    <string name="notification_channel_name">Usb debugging</string>
+    <string name="notification_title">Usb debugging is active</string>
+    <string name="notification_text">Tap to disable</string>
 </resources>

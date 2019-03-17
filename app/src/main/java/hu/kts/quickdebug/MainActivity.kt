@@ -1,7 +1,6 @@
 package hu.kts.quickdebug
 
 import android.os.Bundle
-import android.service.quicksettings.TileService
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -9,5 +8,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Notification(applicationContext).createNotificationChannel()
     }
+
 }
